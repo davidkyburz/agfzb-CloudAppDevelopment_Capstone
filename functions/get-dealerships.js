@@ -18,6 +18,8 @@ function main1(params) {
 function main2(params) {
   return {
     entries: params.docs.map(doc => { return {
+      full_name: doc.full_name,
+      short_name: doc.short_name,
       id: doc.id,
       city: doc.city,
       state: doc.state,
