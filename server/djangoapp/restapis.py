@@ -95,7 +95,7 @@ def get_dealer_reviews_from_cf(url, dealerId):
 def analyze_review_sentiments(text):
     URL = 'https://api.us-south.natural-language-understanding.watson.cloud.ibm.com/instances/aa5e6e29-eb70-485a-9616-760d88c7ba44/v1/analyze?version=2020-08-01'
     API_KEY = 'U0sdec7yS8tEZYulHW-jxqz86QUjc156Ke0MxKOhtPjp'
-    params = {"text": text, "features": {"sentiment": {}}}
+    params = json.dumps({"text": text, "features": {"sentiment": {}}})
     response = requests.post(
         URL, data=params, headers={'Content-Type': 'application/json'}, auth=HTTPBasicAuth('apikey', API_KEY)
     )

@@ -9,10 +9,16 @@
   */
 
 function main1(params) {
+  if (params.dealerId) {
+    return {
+      "query": {"selector": {"id": parseInt(params.dealerId, 10)}}
+    };
+  };
   return {
     "query": {"selector": {"st": params.state}}
- };
+  };
 }
+
 
 
 function main2(params) {
